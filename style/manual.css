@@ -1,0 +1,145 @@
+body {
+  font-family: "Ubuntu";
+  background: #F3F3F3;
+  color: #000000;
+  font-size: 14pt;
+  line-height: 1.25em;
+  margin: 0em;
+  padding: 0em;
+}
+
+.overlay-navigation {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 250px;
+  line-height: 1.5em;
+  padding: 10px;
+}
+.overlay-navigation h1 {
+  font-size: 18pt;
+  margin: 0px 0 5px 0;
+}
+.overlay-navigation h2 {
+  font-size: 16pt;
+  margin: 0em;
+  margin: 10px 0 5px 0;
+}
+.overlay-navigation ul {
+  font-size: 12pt;
+  margin: 0px 20px 30px 0;
+  line-height: 1em;
+}
+li.selected {
+  font-weight: bold;
+}
+
+.credit-navigation {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  width: 250px;
+  line-height: 1.25em;
+  padding: 10px;
+  font-size: 10pt;
+}
+.credit-navigation div {
+  margin-top: 1em;
+}
+
+div.base {
+  display: flex;
+  overflow: hidden;
+  margin: 0em;
+}
+div.navbar {
+  flex: 0 0 230px;
+  width: 230px;
+  margin: 0em;
+  padding: 0 20px 0 20px;
+  background: #E0E0E0;
+}
+div.content {
+  flex: 1 1 0px;
+  padding: 0em 6em 0em 4em;
+  width: 200px;
+}
+.content h1 {
+  font-size: 26pt;
+  padding-left: 0.25em;
+}
+.content h2 {
+  font-size: 20pt;
+  margin: 1em 0em 1em 0em;
+  padding-left: 0.25em;
+}
+.content hr {
+  margin: 4em 1em 4em 1em;
+}
+.content div {
+  margin: 0em 0em 4em 0em;
+}
+.content pre {
+  overflow: auto;
+}
+
+.code-header {
+  font-family: "Ubuntu Mono";
+  color: #246464;
+}
+
+a {
+  color: #5555C0;
+  text-decoration: none;
+}
+a:visited {
+  color: #8844C0;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  padding-left: 1em;
+}
+
+ul > li:not(:last-child) {
+  padding-bottom: 0.5em;
+}
+
+.inline-code {
+  font-family: "Ubuntu Mono";
+  background: #E0E0E0;
+  padding: 2px;
+}
+
+pre {
+  font-family: "Ubuntu Mono";
+  background: #E0E0E0;
+  padding: 8px;
+  margin: 10px 0px 0px 0px;
+  flex-shrink: 1;
+}
+
+.comment {
+  font-style: italic;
+  color: #767676;
+}
+.key {
+  color: #246464;
+}
+.string {
+  color: #349034;
+}
+.bool {
+  font-style: italic;
+  color: #C04040;
+}
+.int {
+  color: #A07040;
+}
+
+.clarify {
+  text-decoration: underline dotted 2px #C040C0;
+  cursor: help;
+}
