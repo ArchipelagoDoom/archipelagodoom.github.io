@@ -9,11 +9,11 @@
 
 <body>
 
-<div class="overlay-navigation">
+<div class="overlay ov-navigation">
 <!-- ---------------------------------------------------------------------- -->
 <h1><i>ap_gen_tool</i> Documentation</h1>
 <ul>
-  <li>Index</li>
+	<li><a href="/ap_gen_tool/">Index</a></li>
 </ul>
 <h2>Making a new world</h2>
 <ul>
@@ -24,7 +24,7 @@
 <h2>Advanced Game Jsons</h2>
 <ul>
   <li><a href="/ap_gen_tool/advanced/overview.html">Overview</a></li>
-  <li>Episodes</li>
+  <li><a href="/ap_gen_tool/advanced/episodes.html">Episodes</a></li>
   <li><a href="/ap_gen_tool/advanced/game_info.html">Game Info</a></li>
   <li class="selected">World Info</li>
   <li>Level Select</li>
@@ -33,7 +33,7 @@
 <!-- ---------------------------------------------------------------------- -->
 </div>
 
-<div class="credit-navigation">
+<div class="hide-minimal overlay ov-credits">
 <div><i>ap_gen_tool</i> is &copy; Daivuk & Kaito Sinclaire, and is open source software released under the terms of the <a href="https://raw.githubusercontent.com/ArchipelagoDoom/ap_gen_tool/refs/heads/main/COPYING">GNU GPL v2</a>.</div>
 <div><a href="https://github.com/ArchipelagoDoom/archipelagodoom.github.io/">Website Source</a></div>
 </div>
@@ -47,7 +47,7 @@
 <div>
 <span class="inline-code key">"world_info"</span> contains some additional controls for the Python (Archipelago-facing) side of the APWorld.
 <br><br>
-While <span class="inline-code key">"world_info"</span> is technically optional, it is usually a good idea to at <b>least</b> specify a description, and perhaps some World Options as well.
+While <span class="inline-code key">"world_info"</span> is technically optional, it is usually a good idea to at <b>least</b> specify a description, and perhaps some World Options as well. Unspecified fields will receive defaults based on the IWAD of the game.
 </div>
 
 
@@ -262,7 +262,7 @@ Example:
 
 <h2>Custom Option</h2>
 <div>
-Including this World Option adds an extra, arbitrary option to the world, that you can customize the behavior of using <span class="inline-code key">"hooks"</span>. This World Option may be added multiple times, to add multiple such custom options.
+Including this World Option adds an extra, arbitrary option to the world, that you can customize the behavior of using <a href="#hooks"><span class="inline-code key">"hooks"</span></a>. This World Option may be added multiple times, to add multiple such custom options.
 <br><br>
 The following additional fields are recognized:
 <ul>
@@ -309,7 +309,7 @@ Examples:
 
 <!-- ---------------------------------------------------------------------- -->
 </div>
-<div class="navbar"></div>
+<div class="hide-minimal navbar"></div>
 </div>
 </body>
 </html>

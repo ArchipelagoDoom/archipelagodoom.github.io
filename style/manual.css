@@ -8,24 +8,37 @@ body {
   padding: 0em;
 }
 
-.overlay-navigation {
+@media screen and (max-width: 940px) {
+  .hide-minimal {
+    display: none;
+  }
+}
+
+.overlay {
+  box-sizing: border-box;
+  width: 270px;
+  max-height: 100vh;
+  padding: 10px;
+  overflow-x: clip;
+  overflow-y: auto;
+  z-index: 1000;
+}
+.ov-navigation {
   position: fixed;
   top: 0px;
   left: 0px;
-  width: 250px;
   line-height: 1.5em;
-  padding: 10px;
 }
-.overlay-navigation h1 {
+.ov-navigation h1 {
   font-size: 18pt;
   margin: 0px 0 5px 0;
 }
-.overlay-navigation h2 {
+.ov-navigation h2 {
   font-size: 16pt;
   margin: 0em;
   margin: 10px 0 5px 0;
 }
-.overlay-navigation ul {
+.ov-navigation ul {
   font-size: 12pt;
   margin: 0px 20px 30px 0;
   line-height: 1em;
@@ -34,16 +47,14 @@ li.selected {
   font-weight: bold;
 }
 
-.credit-navigation {
+.ov-credits {
   position: fixed;
   bottom: 0px;
   right: 0px;
-  width: 250px;
   line-height: 1.25em;
-  padding: 10px;
   font-size: 10pt;
 }
-.credit-navigation div {
+.ov-credits div {
   margin-top: 1em;
 }
 
@@ -55,6 +66,7 @@ div.base {
 div.navbar {
   flex: 0 0 230px;
   width: 230px;
+  min-height: 100vh;
   margin: 0em;
   padding: 0 20px 0 20px;
   background: #E0E0E0;

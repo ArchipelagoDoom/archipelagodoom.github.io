@@ -9,11 +9,11 @@
 
 <body>
 
-<div class="overlay-navigation">
+<div class="overlay ov-navigation">
 <!-- ---------------------------------------------------------------------- -->
 <h1><i>ap_gen_tool</i> Documentation</h1>
 <ul>
-  <li>Index</li>
+  <li><a href="/ap_gen_tool/">Index</a></li>
 </ul>
 <h2>Making a new world</h2>
 <ul>
@@ -24,7 +24,7 @@
 <h2>Advanced Game Jsons</h2>
 <ul>
   <li class="selected">Overview</li>
-  <li>Episodes</li>
+  <li><a href="/ap_gen_tool/advanced/episodes.html">Episodes</a></li>
   <li><a href="/ap_gen_tool/advanced/game_info.html">Game Info</a></li>
   <li><a href="/ap_gen_tool/advanced/world_info.html">World Info</a></li>
   <li>Level Select</li>
@@ -33,7 +33,7 @@
 <!-- ---------------------------------------------------------------------- -->
 </div>
 
-<div class="credit-navigation">
+<div class="overlay ov-credits hide-minimal">
 <div><i>ap_gen_tool</i> is &copy; Daivuk & Kaito Sinclaire, and is open source software released under the terms of the <a href="https://raw.githubusercontent.com/ArchipelagoDoom/ap_gen_tool/refs/heads/main/COPYING">GNU GPL v2</a>.</div>
 <div><a href="https://github.com/ArchipelagoDoom/archipelagodoom.github.io/">Website Source</a></div>
 </div>
@@ -50,7 +50,7 @@ All of these fields must be present for a Game Json file to be considered valid.
 
 <h2 id="short_name" class="code-header">"short_name"</h2>
 <div>
-This is a short, unique name for your game, used to identify the game throughout <i>ap_gen_tool</i> and <i>Archipelago Doom</i>. This affects where the logic files will be saved, where player's save files will be kept, and what the command line option to play this game will be, among many other things.
+This is a short, unique name for the game, used to identify the game throughout <i>ap_gen_tool</i> and <i>Archipelago Doom</i>. This affects where the logic files will be saved, where player's save files will be kept, and what the command line option to play this game will be, among many other things.
 <br><br>
 The filename of the WAD, without its extension, is generally the best thing to use here.
 <br><br>
@@ -110,9 +110,9 @@ Examples:
 
 <h2 id="iwad" class="code-header">"iwad"</h2>
 <div>
-This is the IWAD that your game needs to function. For most games, this will be the name of the WAD file that the base game uses. <span class="inline-code string">"DOOM.WAD"</span> is the IWAD for Doom (1993), <span class="inline-code string">"DOOM2.WAD"</span> is Doom 2's IWAD, <span class="inline-code string">"HERETIC.WAD"</span> is Heretic's IWAD, etc.
+This is the IWAD that the game needs to function. For most games, this will be the name of the WAD file that the base game uses. <span class="inline-code string">"DOOM.WAD"</span> is the IWAD for Doom (1993), <span class="inline-code string">"DOOM2.WAD"</span> is Doom 2's IWAD, <span class="inline-code string">"HERETIC.WAD"</span> is Heretic's IWAD, etc.
 <br><br>
-If your game is entirely standalone and does not rely on <b>any</b> other game's assets to function (e.g. HacX, REKKR, Chex Quest), then that game's WAD file <b>is</b> the IWAD, and should be used here.
+If the game is entirely standalone and does not rely on <b>any</b> other game's assets to function (e.g. HacX, REKKR, Chex Quest), then that game's WAD file <b>is</b> the IWAD, and should be placed here.
 <br><br>
 Examples:
 <pre>
@@ -128,9 +128,9 @@ Examples:
 
 <h2 id="episodes" class="code-header">"episodes"</h2>
 <div>
-This structure contains information about all episodes in your game, including information about all maps contained within them.
+This structure contains information about all episodes in the game, including information about all maps contained within them. Even if the game isn't normally episodic, it should be split up into mulitple "episode" chunks so that players can choose sets of levels to play.
 <br><br>
-See the Episodes page for more information.
+See the <a href="/ap_gen_tool/advanced/episodes.html">Episodes</a> page for more information.
 </div>
 
 
@@ -145,7 +145,7 @@ These fields are optional, but are extremely likely to be important to making ne
 
 <h2 id="required_wads" class="code-header">"required_wads"</h2>
 <div>
-Any additional files that your game must have in order to function should be placed here. Ordering is important; APDoom will load files in the order that you specify here.
+Any additional files that the game must have in order to function should be placed here. Ordering is important; <i>Archipelago Doom</i> will load files in the order that is specified here.
 <br><br>
 If only one file is present, a string may be used instead. (Omit the square brackets.)
 <br><br>
@@ -163,7 +163,7 @@ Examples:
 
 <h2 id="optional_wads" class="code-header">"optional_wads"</h2>
 <div>
-Any additional files that your game would like to have automatically loaded, but are not required for the game to function; for example, community music packs. WAD files in here <i>must not</i> modify any maps that are specified in <span class="inline-code key">"episodes"</span>, as that could cause issues.
+Any additional files that would be nice to have automatically loaded, but are not required for the game to function should be placed here; for example, community music packs. WAD files in here <i>must not</i> modify any maps that are specified in <a href="#episodes"><span class="inline-code key">"episodes"</span></a>, as that could cause issues.
 <br><br>
 If only one file is present, a string may be used instead. (Omit the square brackets.)
 <br><br>
@@ -178,7 +178,7 @@ Example:
 
 <h2 id="included_wads" class="code-header">"included_wads"</h2>
 <div>
-Any additional files that should be bundled inside the APWorld itself and automatically loaded alongside the game. The intended use case for this is if you need to create additional graphics, music, scripts, etc. specifically for this APWorld; by creating a new WAD file with those additions and placing its name in here, it will be included inside the APWorld and automatically loaded without players needing to download any additional files.
+Any additional files that should be bundled inside the APWorld itself and automatically loaded alongside the game. The intended use case for this is if additional graphics, music, scripts, etc. need to be created for this game; by creating a new WAD file with those additions and placing its name in here, it will be included inside the resulting APWorld and automatically loaded without players needing to download any additional files.
 <br><br>
 If only one file is present, a string may be used instead. (Omit the square brackets.)
 <br><br>
@@ -203,7 +203,7 @@ These fields are not required, but add additional functionality to worlds, if de
 An extra settings object that enables some additional behaviors if desired. The following options are available:
 <ul>
 <li><span class="inline-code key">"extended_names"</span>: If set to <span class="inline-code bool">true</span>, the given "name" of each location in ap_gen_tool will be appended to the name of every location in Archipelago. This makes location names a little longer, and is a considerable amount of work, but tends to ease player confusion about what location is what.</li>
-<li><span class="inline-code key">"check_sanity"</span>: If set to <span class="inline-code bool">true</span>, Check Sanity will be available as an option in your world, and locations can be disabled by default by marking them with the Check Sanity flag. This is recommended for games with excessively high location counts, like Heretic.</li>
+<li><span class="inline-code key">"check_sanity"</span>: If set to <span class="inline-code bool">true</span>, Check Sanity will be available as an option in the world, and locations can be disabled by default by marking them with the Check Sanity flag. This is recommended for games with excessively high location counts, like Heretic.</li>
 </ul>
 Example:
 <pre>
@@ -245,7 +245,7 @@ Examples:
 
 <h2 id="location_doom_types" class="code-header">"location_doom_types"</h2>
 <div>
-This is a list of key-value pairs, containing the <span class="clarify" title="Editor thing number.">doomednum</span> of every item that should be included in the randomizer, and the name of that item that will be used when generating locations. This list determines what locations will be available in your world.
+This is a list of key-value pairs, containing the <span class="clarify" title="Editor thing number.">doomednum</span> of every item that should be included in the randomizer, and the name of that item that will be used when generating locations. This list determines what locations will be available.
 <br><br>
 If omitted, a reasonable default list for the IWAD in use will be provided.
 <br><br>
@@ -264,7 +264,7 @@ Example:
 
 <h2 id="game_info" class="code-header">"game_info"</h2>
 <div>
-This structure contains extra information used by <i>Archipelago Doom</i> to customize aspects of gameplay. Reasonable defaults are provided on a per-IWAD bases, and this structure only needs to be included if the game in question uses an unrecognized IWAD, or if the WAD makes modifications to the way the game plays.
+This structure contains extra information used by <i>Archipelago Doom</i> to customize aspects of gameplay. Reasonable defaults are provided on a per-IWAD basis, and this structure only needs to be included if the game in question uses an unrecognized IWAD, or if a PWAD makes modifications to the way the game plays.
 <br><br>
 See the <a href="/ap_gen_tool/advanced/game_info.html">Game Info</a> page for more information.
 </div>
@@ -282,7 +282,7 @@ See the <a href="/ap_gen_tool/advanced/world_info.html">World Info</a> page for 
 <div>
 Map tweaks are an advanced tool for making minor modifications to maps when they're loaded, without needing to include an edited version of the map with the world. It is mostly used for removing potential softlocks from levels; but it is powerful enough to make any change to a map that wouldn't require a nodesbuild, along with enabling some features specific to <i>Archipelago Doom</i>.
 <br><br>
-See the Map Tweaks page for more information.
+See the Map Tweaks page (TODO) for more information.
 </div>
 
 
@@ -292,7 +292,7 @@ This structure contains the layout and graphics definitions for each Level Selec
 <br><br>
 It is not necessary to create a level select for each world; <i>Archipelago Doom</i> contains a perfectly serviceable basic level select that it will use if no <span class="inline-code key">"level_select"</span> structure is present.
 <br><br>
-See the Level Select page for more information.
+See the Level Select page (TODO) for more information.
 </div>
 
 
@@ -324,7 +324,7 @@ Example:
 
 <!-- ---------------------------------------------------------------------- -->
 </div>
-<div class="navbar"></div>
+<div class="navbar hide-minimal"></div>
 </div>
 </body>
 </html>

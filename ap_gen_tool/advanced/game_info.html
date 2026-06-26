@@ -9,22 +9,22 @@
 
 <body>
 
-<div class="overlay-navigation">
+<div class="overlay ov-navigation">
 <!-- ---------------------------------------------------------------------- -->
 <h1><i>ap_gen_tool</i> Documentation</h1>
 <ul>
-	<li>Index</li>
+  <li><a href="/ap_gen_tool/">Index</a></li>
 </ul>
 <h2>Making a new world</h2>
 <ul>
-	<li>Creating a Game Json</li>
-	<li>Navigating <i>ap_gen_tool</i></li>
-	<li>Bounding boxes</li>
+  <li>Creating a Game Json</li>
+  <li>Navigating <i>ap_gen_tool</i></li>
+  <li>Bounding boxes</li>
 </ul>
 <h2>Advanced Game Jsons</h2>
 <ul>
   <li><a href="/ap_gen_tool/advanced/overview.html">Overview</a></li>
-  <li>Episodes</li>
+  <li><a href="/ap_gen_tool/advanced/episodes.html">Episodes</a></li>
   <li class="selected">Game Info</li>
   <li><a href="/ap_gen_tool/advanced/world_info.html">World Info</a></li>
   <li>Level Select</li>
@@ -33,7 +33,7 @@
 <!-- ---------------------------------------------------------------------- -->
 </div>
 
-<div class="credit-navigation">
+<div class="hide-minimal overlay ov-credits">
 <div><i>ap_gen_tool</i> is &copy; Daivuk & Kaito Sinclaire, and is open source software released under the terms of the <a href="https://raw.githubusercontent.com/ArchipelagoDoom/ap_gen_tool/refs/heads/main/COPYING">GNU GPL v2</a>.</div>
 <div><a href="https://github.com/ArchipelagoDoom/archipelagodoom.github.io/">Website Source</a></div>
 </div>
@@ -45,6 +45,8 @@
 <!-- ---------------------------------------------------------------------- -->
 <h1>Overview</h1>
 <div>
+Note that every single field here is optional unless the game uses a non-standard IWAD; all of the typical games have well-tested defaults for every option.
+<br><br>
 The following fields are present in the <span class="inline-code key">"game_info"</span> structure:
 </div>
 
@@ -244,7 +246,7 @@ It is also possible to change the generic "Player died" message that is used whe
 
 <!-- ---------------------------------------------------------------------- -->
 </div>
-<div class="navbar"></div>
+<div class="hide-minimal navbar"></div>
 </div>
 </body>
 </html>
